@@ -1,12 +1,18 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import toggle from "../assets/toggle.png";
+import logo from "../../assets/logo.png";
+import toggle from "../../assets/toggle.png";
+
 function NavBar() {
   const email = "pnarain82@gmail.com";
+
   return (
-    <Navbar expand="md">
+    <Navbar expand="md" className="nav-bar">
       <Container>
+        <Navbar.Brand>
+          <img src={logo} alt="LOGO" width="80" height="80" />
+        </Navbar.Brand>
         <Navbar.Text>
           <span className="mx-2">
             <i class="fa-regular fa-envelope" />

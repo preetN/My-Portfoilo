@@ -1,42 +1,34 @@
-import TagCloud from "TagCloud";
-import React, { useEffect } from "react";
+import React from "react";
+
 function Skills() {
-  useEffect(() => {
-    return () => {
-      const container = ".tagcloud";
-      const texts = [
-        "HTML",
-        "CSS/SCSS",
-        "JavaScript",
-        "React",
-        "Bootstrap",
-        "Material UI",
-        "Tailwind CSS",
-        "SQL",
-        "MongoDB",
-        "PostgreSQL",
-        "C/C++",
-        "Java",
-        "SpringBoot",
-        "Figma",
-      ];
-      const options = {
-        radius: 300,
-        maxSpeed: "normal",
-        initSpeed: "normal",
-        keep: true,
-      };
-
-      TagCloud(container, texts, options);
-    };
-  }, []);
-
+  const skills = [
+    "HTML",
+    "CSS",
+    "Javascript",
+    "React",
+    "Bootstrap",
+    "Material UI",
+    "Tailwind CSS",
+    "C/C++",
+    "Java",
+    "Spring Boot",
+    "SQL",
+    "MongoDB",
+    "PostgreSQL",
+  ];
   return (
-    <>
-      <div className="text-sphere">
-        <span className="tagcloud"></span>
+    <div id="skills" className=" min-vh-100 ">
+      <div className="skill-page d-flex flex-column align-items-center p-5">
+        <h2>My skills</h2>
+        <div className="d-flex flex-wrap justify-content-center align-item-center">
+          {skills.map((skill) => (
+            <div className="circle1">
+              <div className="circle">{skill}</div>
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
