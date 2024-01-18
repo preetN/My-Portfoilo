@@ -5,13 +5,10 @@ import SideBar from "./SideBar";
 
 function Home() {
   return (
-    <div className="home d-flex ">
+    <div id="home" className="home d-flex p-2">
       <SideBar />
 
-      <div
-        id="home"
-        className="d-flex m-5 justify-content-center align-item-center home"
-      >
+      <div className="d-flex m-5 pt-5 justify-content-center align-item-center home">
         <div className="container d-flex justify-content-center align-items-center h-100">
           <div className="d-flex flex-column  justify-content-center align-items-center p-4 ">
             <div className="content">
@@ -48,8 +45,9 @@ function Home() {
                 Explore More
               </a>
               <span className="down-arrow">
-                <i class="fa-solid fa-arrow-down-long"></i>
-                <small>scroll down</small>
+                <a href="#skills">
+                  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIklEQVR4nO2YzQqCQBSFz3uJy9rXol2vIKLiyv+V7xU9Ratq7y4KCicmLMQaDaG5TtwPLszqzjl+sxJg/o8tAKGYDQxADMzkEXK6cAGNsAFq2AA1bIAaNkANG6CGDVDDBqhhA9SwAWrYADVsgBo2QA0boMYIA3MAh76/0D0FPs0ewExngXNfINu23wpYljVU4qSzQC0vdRxH1HUtxlBV1WM8z3sWkDu1cXl+Odd1xVjyPG8bkDu1sWvrH1OiLMvuE5I7tbEAcGsHkE/hW9I07Ya/NTu1sgJwbQfxfX8wfJIkn8KvdYdXlgiCQBk+juNJhVeWCMPQmPDKElmWvcJHUTTp8MoSRVE8bJgQXlnCpPBDJYwIryphVHg0LAEcm5Hnn3AHJpA6f8bbAk0AAAAASUVORK5CYII=" />
+                </a>
               </span>
             </div>
           </div>

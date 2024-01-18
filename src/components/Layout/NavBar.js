@@ -36,6 +36,9 @@ function NavBar() {
             <Nav.Link href="#projects" className="navbar-link">
               Projects
             </Nav.Link>
+            <Nav.Link href="#about" className="navbar-link">
+              About
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

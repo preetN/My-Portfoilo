@@ -1,15 +1,13 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import NavBar from "./NavBar";
 
 function Layout({ children }) {
   return (
     <>
-      <div className="d-flex flex-column p-2">
+      <div className="d-flex flex-column">
         <NavBar />
-        <Container>
-          <div>{children}</div>
-        </Container>
+
+        <div>{children}</div>
       </div>
     </>
   );
