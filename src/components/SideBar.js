@@ -5,13 +5,13 @@ function SideBar() {
       <div className="sidebar p-2">
         <div className="socials my-auto">
           <a href="#" className="nav-ink">
-            <i class="fa-brands fa-github"></i>
+            <i className="fa-brands fa-github"></i>
           </a>
           <a href="#">
-            <i class="fa-brands fa-linkedin"></i>
+            <i className="fa-brands fa-linkedin"></i>
           </a>
           <a href="#">
-            <i class="fa-solid fa-phone"></i>
+            <i className="fa-solid fa-phone"></i>
           </a>
         </div>
       </div>

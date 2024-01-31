@@ -15,7 +15,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+body {
+  overflow-x: hidden;
+}
 /* Side Bar */
 .sidebar {
   display: flex;
@@ -48,14 +50,8 @@ html {
   box-shadow: 1px 1px 10px 2px var(--secondarycolor);
 }
 /* NavBar */
-Navbar {
-  transition: 1s;
-}
-.nav-bar {
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  width: 100%;
+.navbar-container {
+  background-color: white;
 }
 .navbar-link {
   transition: transform 0.6s;
@@ -64,10 +60,21 @@ Navbar {
   transform: scale(1.2);
 }
 /* Home */
+#home {
+  padding: 2rem 0 8rem;
+  min-height: 70vh;
+  width: 100%;
+}
 
-.home-image {
-  width: 400px;
-  min-width: 240px;
+.welcome-1 {
+  font-size: 3em;
+}
+.welcome-2 {
+  font-size: 4em;
+}
+.loop {
+  font-size: 2em;
+  display: inline-block;
 }
 .btn-home {
   display: inline-flex;
@@ -85,6 +92,9 @@ Navbar {
 }
 
 .down-arrow {
+  position: absolute;
+  transform: translate(10px, 100px);
+  z-index: 1;
   margin-top: 1em;
   opacity: 0;
   transition: opacity ease-out 2s;
@@ -221,19 +231,24 @@ h1:hover {
   }
 }
 /* About  */
-.about-section > *,
-.qual > * {
+
+.about-text {
+  font-size: 15px;
   color: white;
 }
-.about-text {
-  font-size: 24px;
+.about-img {
+  animation-name: fade-in;
+  animation-timeline: scroll(Y);
+  animation-duration: 5s;
 }
-.qual {
-  background: rgba(255, 255, 255, 0.268);
-  padding: 10px;
-  border-radius: 10px;
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
 /* Contact */
 .contact-section {
   margin-top: 5rem;
@@ -262,4 +277,61 @@ h1:hover {
   border: none;
   background-color: var(--secondarycolor);
   color: var(--fontcolor);
+}
+/* Footer */
+.footer {
+  background-color: black;
+  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.6rem;
+}
+.footer-container h2,
+p,
+ul,
+li {
+  color: white;
+}
+.footer-container ul {
+  list-style-type: none;
+  padding-top: 1rem;
+  text-align: center;
+  padding-inline-start: 0px;
+}
+
+.footer-container li {
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .home-image {
+    display: none;
+  }
+  .welcome-1 {
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .welcome-2 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+  .loop {
+    font-size: 1em;
+    font-weight: 700;
+  }
+}
+@media (max-width: 900px) {
+  .welcome-1 {
+    font-size: 2em;
+    font-weight: 700;
+  }
+  .welcome-2 {
+    font-size: 3em;
+    font-weight: 700;
+  }
+  .loop {
+    font-size: 1em;
+    font-weight: 700;
+  }
 }

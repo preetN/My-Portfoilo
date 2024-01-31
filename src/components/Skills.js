@@ -20,15 +20,19 @@ function Skills() {
     <>
       <div
         id="skills"
-        className="d-flex justify-content-center align-items-center min-vh-100"
+        className="container-fluid min-vh-100 d-flex align-items-center"
       >
-        <div className="skill-page d-flex flex-column align-items-center p-5">
-          <h1>My skills</h1>
+        <div className="row">
+          <h1 className="d-inline-flex justify-content-center mb-5">
+            My skills
+          </h1>
 
-          <div className=" d-flex flex-wrap justify-content-center align-item-center">
+          <div className="row">
             {skills.map((skill) => (
-              <div className="circle1">
-                <div className="circle">{skill}</div>
+              <div key={skill} className="col">
+                <div className="circle1">
+                  <div className="circle">{skill}</div>
+                </div>
               </div>
             ))}
           </div>

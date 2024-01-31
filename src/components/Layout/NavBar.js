@@ -1,31 +1,27 @@
-import Container from "react-bootstrap/Container";
+import { Container } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo.png";
 import toggle from "../../assets/toggle.png";
-
 function NavBar() {
   const email = "pnarain82@gmail.com";
 
   return (
-    <Navbar expand="md" className="nav-bar">
+    <Navbar expand="lg" className="navbar-container sticky-top">
       <Container>
         <Navbar.Brand>
           <img src={logo} alt="LOGO" width="80" height="80" />
         </Navbar.Brand>
         <Navbar.Text>
           <span className="mx-2">
-            <i class="fa-regular fa-envelope" />
+            <i className="fa-regular fa-envelope" />
           </span>
           {email}
         </Navbar.Text>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <img src={toggle} width="25" height="25" />
         </Navbar.Toggle>
-        <Navbar.Collapse
-          id="basic-navbar-nav"
-          style={{ justifyContent: "space-between" }}
-        >
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="#home" className="navbar-link">
               Home

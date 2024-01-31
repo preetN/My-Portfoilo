@@ -1,6 +1,8 @@
+import AOS from "aos";
 import React from "react";
 import abtImg from "../assets/about.PNG";
 function About() {
+  AOS.init();
   const deg = [
     {
       name: "Professional Year Programme",
@@ -21,30 +23,44 @@ function About() {
       year: "JUNE 2017",
     },
   ];
+
   return (
     <>
-      <div
-        id="about"
-        className=" bg-dark d-flex justify-content-center align-items-center p-5"
-      >
-        <div className=" p-5 d-flex justify-content-center align-items-center">
-          <img src={abtImg} width={"400px"} />
-          <div className="about-section gap-4 d-flex justify-content-center align-items-center flex-column">
-            <div className="about-text mx-5">
-              I am Antarpreet Kaur, originally from India, relocated to
-              Australia in 2017. As a web developer, I specialize in creating
-              web-based applications and possess a keen interest in the field.
+      <div id="about" className="bg-dark py-5">
+        <div className="container">
+          <div className="row gap-3">
+            <div
+              data-aos="zoom-in-up"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+              className="col-md-5 about-img"
+            >
+              <img
+                src={abtImg}
+                style={{ maxHeight: "500px", objectFit: "contain" }}
+              />
             </div>
-            <div className="d-flex justify-content-start align-items-start gap-4 flex-column flex-wrap  ">
+            <div className="col-md-6">
+              <div className="text-light">
+                I am Antarpreet Kaur, originally from India, relocated to
+                Australia in 2017. As a web developer, I specialize in creating
+                web-based applications and possess a keen interest in the field.
+              </div>
               {deg.map((d) => (
-                <span className="qual d-flex">
-                  <i className="fa-solid fa-award "></i>
-                  <span className="info-divider"></span>
-                  <span>
-                    <h5>{d.name}</h5>
-                    <h6>{d.institute}</h6>
-                  </span>
-                </span>
+                <div
+                  data-aos="fade-left"
+                  key={d.name}
+                  className="qual border p-3 my-2 rounded bg-white text-dark"
+                >
+                  <h5>{d.name}</h5>
+                  <i>{d.institute}</i>
+                  <br />
+                  <small>
+                    {d.year}
+                    {" | "}
+                    {d.place}
+                  </small>
+                </div>
               ))}
             </div>
           </div>

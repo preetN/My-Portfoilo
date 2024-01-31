@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import Slider from "react-slick";
 import img3 from "../assets/projects/Library.png";
@@ -7,11 +7,12 @@ import img5 from "../assets/projects/PrankC.png";
 import img2 from "../assets/projects/Quiz.png";
 import img1 from "../assets/projects/flowesShop.png";
 function Projects() {
+  const [slide, setSlide] = useState(3);
   var settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: slide,
     slidesToScroll: 1,
   };
   const projects = [
@@ -62,7 +63,21 @@ function Projects() {
   const handleOnWeb = (project) => {
     window.open(project.linkW);
   };
+  const numberOfSlides = () => {
+    console.log(window.innerWidth);
 
+    if (window.innerWidth < 750) {
+      setSlide(1);
+    } else {
+      setSlide(3);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("resize", numberOfSlides);
+    return () => {
+      window.removeEventListener("resize", numberOfSlides);
+    };
+  }, []);
   return (
     <div
       id="projects"
@@ -71,7 +86,7 @@ function Projects() {
       <div className="project-section ">
         <Slider {...settings}>
           {projects.map((project) => (
-            <Card className="project">
+            <Card key={project.id} className="project">
               <Card.Img
                 onClick={() => handleOnWeb(project)}
                 variant="top"
@@ -85,14 +100,14 @@ function Projects() {
                   className="btn-project"
                   onClick={() => handleOnClick(project)}
                 >
-                  <i class="fa-solid fa-less-than"></i>
+                  <i className="fa-solid fa-less-than"></i>
                   <span className="tag">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                   </span>
-                  <i class="fa-solid fa-greater-than"></i>
+                  <i className="fa-solid fa-greater-than"></i>
                 </Button>
               </Card.Body>
             </Card>
